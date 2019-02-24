@@ -661,4 +661,77 @@ cargo_ship_engine.drive_over_tie_trigger = nil
 
 
 
-data:extend({cargo_ship_engine,cargo_ship, oil_tanker, indep_boat, boat, boat_engine})
+----------------------------------------------------------------
+-------------------------- TRAIN CARRIER -----------------------
+----------------------------------------------------------------
+
+local train_carrier = table.deepcopy(data.raw["cargo-wagon"]["cargo-wagon"])
+train_carrier.name = "train_carrier"
+train_carrier.icon = "__cargo-ships__/graphics/icons/traincarrier_icon.png"
+train_carrier.icon_size = 128
+train_carrier.flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"}
+train_carrier.minable = {mining_time = 1, result = "train_carrier"}
+
+train_carrier.selection_box = {{-1.5, -8.5}, {1.5, 8.5}}
+train_carrier.collision_box = {{-1.5, -7.5}, {1.5, 7.5}}
+train_carrier.drawing_box = {{-1, -8}, {1, 8}}
+train_carrier.connection_distance = 3
+train_carrier.joint_distance = 12
+
+
+train_carrier.weight = 100000
+train_carrier.inventory_size = 1000
+train_carrier.max_speed = 0.15
+train_carrier.air_resistance = 0.40
+
+
+train_carrier.pictures =
+{
+	layers =
+	{
+		{
+			slice = 4,
+			priority = "low",
+			width = 500,
+			height = 500,
+			direction_count = 256,
+            allow_low_quality_rotation = true,
+			filenames =
+			{
+        "__cargo-ships__/graphics/entity/train_carrier/cs_0.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_1.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_2.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_3.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_4.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_5.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_6.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_7.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_8.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_9.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_10.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_11.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_12.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_13.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_14.png",
+        "__cargo-ships__/graphics/entity/train_carrier/cs_15.png",
+      },
+			line_length = 4,
+  		lines_per_file = 4,
+  		scale = 1.7,--3,
+  		shift = {0.0, -1.7}
+		}
+	}
+}
+train_carrier.stand_by_light = ship_light()
+--train_carrier.back_light = ship_light()
+
+train_carrier.vertical_doors = nil
+train_carrier.horizontal_doors = nil
+
+train_carrier.wheels = non_standard_wheels
+train_carrier.working_sound = nil
+train_carrier.drive_over_tie_trigger = nil
+
+
+
+data:extend({cargo_ship_engine, cargo_ship, oil_tanker, indep_boat, boat, boat_engine, train_carrier})

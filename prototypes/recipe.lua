@@ -44,6 +44,20 @@ data:extend({
     },
     {
         type = "recipe", 
+        name = "train_carrier",
+        enabled = false, 
+        energy_required = 10,
+        ingredients =
+        {
+            {"steel-plate", 250},
+            {"engine-unit", 50},
+            {"iron-gear-wheel", 50},
+            {"electronic-circuit", 30}
+        },
+        result = "train_carrier"
+    },
+    {
+        type = "recipe", 
         name = "ship_pump",
         enabled = false, 
         energy_required = 1,

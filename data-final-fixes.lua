@@ -22,7 +22,7 @@ for i,loco in pairs(data.raw["locomotive"]) do
 end
 
 for i,cargo in pairs(data.raw["cargo-wagon"]) do
-	if cargo.name == "cargo_ship" or cargo.name == "boat" then
+	if cargo.name == "cargo_ship" or cargo.name == "boat" or cargo.name == "train_carrier" then
 		if(cargo.collision_mask) then
 			cargo.collision_mask[#cargo.collision_mask+1] = "layer-14"
 		else

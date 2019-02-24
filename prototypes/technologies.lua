@@ -219,6 +219,32 @@ data:extend ({
     time = 30
   },
   order = "c-g-b",
+},
+{
+  type = "technology",
+  name = "train_carriers",
+  icon = "__cargo-ships__/graphics/icons/traincarrier_icon.png", 
+  icon_size = 128,
+  effects =
+  {
+    {
+      type = "unlock-recipe",
+      recipe = "train_carrier"
+    },
+  },
+  prerequisites = {"cargo_ships", "railway"},
+  unit =
+  {
+    count = 200,
+    ingredients =
+    {
+      {"science-pack-1", 1},
+      {"science-pack-2", 1},
+      {"science-pack-3", 1}
+    },
+    time = 30
+  },
+  order = "c-g-b",
 }
 
 

@@ -74,6 +74,17 @@ data:extend({
         stack_size = 5, 
         },
         {
+        type = "item-with-entity-data", 
+        name = "train_carrier", 
+        icon = "__cargo-ships__/graphics/icons/traincarrier_icon.png", 
+        icon_size = 128,
+        flags = {"goes-to-quickbar"}, 
+        subgroup = "water_transport", 
+        order = "a[water-system]-f[train_carrier]",
+        place_result = "train_carrier", 
+        stack_size = 5, 
+        },
+        {
         type = "rail-planner",
         name = "water-way",
         icon = "__cargo-ships__/graphics/icons/water_rail.png",

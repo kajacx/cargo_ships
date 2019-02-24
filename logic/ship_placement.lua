@@ -58,7 +58,7 @@ function checkPlacement()
 		local engine = entry[2]
 		local player_index = entry[3]
 
-		if entity.name == "cargo_ship" or entity.name == "oil_tanker" or entity.name == "boat" then
+		if entity.name == "cargo_ship" or entity.name == "oil_tanker" or entity.name == "train_carrier" or entity.name == "boat" then
 			-- check for correct engine placement
 			if engine == nil then
 				cancelPlacement(entity, player_index)
